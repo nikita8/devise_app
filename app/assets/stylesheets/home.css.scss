@@ -1,0 +1,29 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  width: 1024px;
+  margin: auto;
+}
+
+.user_login{
+  margin:100px auto; 
+  width: 480px; 
+  padding:10px; 
+  min-height: 250px; 
+  border-radius: 6px;
+  border: 1px solid #ddd; 
+}
+.user_button{
+  margin-top: 20px;
+  width: 400px;
+}
+
+.client_table{
+  margin-top: 100px;
+}
+
+.search_button{
+  float: left;
+}

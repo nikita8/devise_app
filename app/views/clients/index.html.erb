@@ -1,0 +1,43 @@
+<div class="pull-right user_button">
+  <%= link_to "Add User Info", new_client_path, class: "fancy_view btn btn-primary search_button", style: "margin-right: 10px;"%>
+  <%= form_tag clients_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search],  :placeholder => 'Enter search term...', class: "search_button" %>
+      <%= submit_tag "Search", :name => nil, class: "search_button", style: "margin-left: -10px; height: 30px;" %>
+  <% end %>
+</div>
+<% if @client.present? %>
+  <div class = "client_table" >
+    <table class = "table table-bordered table-striped  table-condensed" style = {"margin-top: 200px;"}>
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Address
+          </th>
+          <th>
+            Actions
+          </th>  
+        </tr>
+      </thead>
+      <tbody>
+        <% @client.each do |c| %>
+          <tr>
+            <td>
+              <%= c.name %>
+            </td>
+            <td>
+              <%= c.address %>
+            </td>
+            <td>
+              <%= link_to "Delete", client_path(c.id), :confirm => 'Are you sure?', :method => :delete %>
+              |
+              <%= link_to "Edit", edit_client_path(c.id), class: "fancy_view" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
